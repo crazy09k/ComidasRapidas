@@ -1,0 +1,88 @@
+{
+    "platillos": [
+        {
+            "nombre": "Hamburguesa Sencilla",
+            "descripcion": "Hamburguesa básica con carne y vegetales",
+            "precio": 40,
+            "imagen": "images/hamburguesa-sencilla.jpg"
+        },
+        {
+            "nombre": "Hamburguesa Mixta",
+            "descripcion": "Hamburguesa con carne y otros ingredientes",
+            "precio": 50,
+            "imagen": "images/hamburguesa-mixta.jpg"
+        },
+        {
+            "nombre": "Hamburguesa Doble",
+            "descripcion": "Hamburguesa con doble carne",
+            "precio": 60,
+            "imagen": "images/hamburguesa-doble.jpg"
+        },
+        {
+            "nombre": "Hamburguesa con Chorizo",
+            "descripcion": "Hamburguesa con chorizo añadido",
+            "precio": 55,
+            "imagen": "images/hamburguesa-chorizo.jpg"
+        },
+        {
+            "nombre": "Hamburguesa Mística",
+            "descripcion": "Hamburguesa especial con ingredientes únicos",
+            "precio": 65,
+            "imagen": "images/hamburguesa-mistica.jpg"
+        },
+        {
+            "nombre": "Perro Sencillo",
+            "descripcion": "Perro caliente básico",
+            "precio": 30,
+            "imagen": "images/perro-sencillo.jpg"
+        },
+        {
+            "nombre": "Perro Especial",
+            "descripcion": "Perro caliente con extras",
+            "precio": 40,
+            "imagen": "images/perro-especial.jpg"
+        },
+        {
+            "nombre": "Perro Americano",
+            "descripcion": "Perro al estilo americano",
+            "precio": 45,
+            "imagen": "images/perro-americano.jpg"
+        },
+        {
+            "nombre": "Perro Choriperro",
+            "descripcion": "Perro con chorizo",
+            "precio": 50,
+            "imagen": "images/perro-choriperro.jpg"
+        },
+        {
+            "nombre": "Salchipapa Sencilla",
+            "descripcion": "Salchipapa básica",
+            "precio": 35,
+            "imagen": "images/salchipapa-sencilla.jpg"
+        },
+        {
+            "nombre": "Salchipapa Especial",
+            "descripcion": "Salchipapa con extras",
+            "precio": 45,
+            "imagen": "images/salchipapa-especial.jpg"
+        },
+        {
+            "nombre": "Salchipapa ChoriPapa",
+            "descripcion": "Salchipapa con chorizo",
+            "precio": 50,
+            "imagen": "images/salchipapa-choripapa.jpg"
+        },
+        {
+            "nombre": "Jugo Natural",
+            "descripcion": "Jugo fresco de frutas naturales",
+            "precio": 20,
+            "imagen": "images/jugo-natural.jpg"
+        },
+        {
+            "nombre": "Jugo Preparado",
+            "descripcion": "Jugo preparado con ingredientes especiales",
+            "precio": 25,
+            "imagen": "images/jugo-preparado.jpg"
+        }
+    ]
+}
