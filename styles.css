@@ -1,25 +1,103 @@
+/* Tarjetas de menú */
 .card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.03);
 }
 .card img {
-    max-width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
+
+/* Tabs */
 .tab-content.hidden {
-    opacity: 0;
-    display: none;
+  opacity: 0;
+  display: none;
 }
 .tab-content {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 .tab-link.active {
-    background-color: #c91b1b; /* Rojo más oscuro para la pestaña activa */
-    color: white;
+  color: #fff;
 }
+
+/* Botón Cyber Flow */
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid #E50914;
+  color: #fff;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: 0.3s;
+  text-shadow: 0 0 8px rgba(229,9,20,0.7);
+  box-shadow: 0 0 12px rgba(229,9,20,0.4);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(229,9,20,0.25) 25%, transparent 70%);
+  animation: flowMove 6s linear infinite;
+  z-index: 0;
+}
+@keyframes flowMove {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-25%, -25%); }
+  100% { transform: translate(0,0); }
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(229,9,20,0.6);
+  border-radius: 8px;
+  z-index: 1;
+}
+.btn:hover {
+  background: #E50914;
+  color: #fff;
+  box-shadow: 0 0 20px #E50914, 0 0 40px rgba(229,9,20,0.8);
+  transform: translateY(-3px);
+}
+
+/* Animación Fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animación modal */
+#product-modal .bg-white {
+  animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
