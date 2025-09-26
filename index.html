@@ -1,140 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cris Burger</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cris Burger</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100">
-    <!-- Encabezado con banner -->
-    <header class="bg-red-600 text-white py-4 shadow-md">
-        <div class="container mx-auto flex items-center justify-between px-4">
-            <!-- Logo + Título -->
-            <div class="flex items-center space-x-4">
-                <img src="images/logo.png" alt="Logo Cris Burger" class="h-16 w-auto rounded-full border-2 border-white shadow-md">
-                <h1 class="text-3xl font-bold tracking-wide">Cris Burger</h1>
-            </div>
+  <!-- Encabezado -->
+  <header class="bg-red-600 text-white py-4 shadow-md">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 space-y-4 md:space-y-0">
+      <!-- Logo + Título -->
+      <div class="flex items-center space-x-4">
+        <img src="images/logo.png" alt="Logo Cris Burger" class="h-14 w-14 md:h-16 md:w-auto rounded-full border-2 border-white shadow-md">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-wide">Cris Burger</h1>
+      </div>
 
-            <!-- Menú de navegación -->
-            <nav class="flex space-x-4">
-                <a href="#inicio" class="tab-link active px-4 py-2 rounded-lg bg-white text-red-600 font-semibold hover:bg-red-700 hover:text-white transition" data-tab="inicio">Inicio</a>
-                <a href="#menu" class="tab-link px-4 py-2 rounded-lg bg-white text-red-600 font-semibold hover:bg-red-700 hover:text-white transition" data-tab="menu">Menú</a>
-                <a href="#contacto" class="tab-link px-4 py-2 rounded-lg bg-white text-red-600 font-semibold hover:bg-red-700 hover:text-white transition" data-tab="contacto">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Contenedor de pestañas -->
-    <div class="container mx-auto py-8 px-4">
-        <!-- Sección de Inicio -->
-        <section id="inicio" class="tab-content py-16 bg-gray-50">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <!-- Texto -->
-                <div class="text-center md:text-left">
-                    <h2 class="text-4xl font-bold mb-4">Bienvenidos a Cris Burger</h2>
-                    <p class="text-lg mb-6">Las mejores hamburguesas, perros y salchipapas en un ambiente acogedor. 
-                        Ven y prueba nuestros platos estrella preparados con ingredientes frescos y de calidad.</p>
-                    <a href="#menu" data-tab="menu" 
-                       class="tab-link bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                       👉 Ver nuestro Menú
-                    </a>
-                </div>
-
-                <!-- Carrusel -->
-                <div class="relative w-full max-w-md mx-auto">
-                    <!-- Contenedor de imágenes -->
-                    <div id="carousel" class="flex overflow-hidden rounded-lg shadow-lg">
-                        <!-- Imagen 1 -->
-                        <img src="images/Hamburplatano.jpg" alt="Hamburguesa Platano" class="w-full h-85 flex-shrink-0">
-                        <!-- Imagen 2 -->
-                        <img src="images/cascajo.jpg" alt="Hamburguesa Pollo" class="w-full flex-shrink-0 hidden">
-                        <!-- Imagen 3 -->
-                        <img src="images/duos.jpg" alt="Hamburguesa Carne" class="w-full flex-shrink-0 hidden">
-                    </div>
-
-                    <!-- Botón Izquierda -->
-                    <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-600">
-                        &#10094;
-                    </button>
-                    <!-- Botón Derecha -->
-                    <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-600">
-                        &#10095;
-                    </button>
-
-                    <!-- Indicadores -->
-                    <div class="flex justify-center mt-3 space-x-2">
-                        <span class="dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
-                        <span class="dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
-                        <span class="dot w-3 h-3 bg-gray-400 rounded-full inline-block cursor-pointer"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Menú -->
-        <section id="menu" class="tab-content hidden">
-            <h2 class="text-2xl font-bold text-center mb-6">Nuestro Menú</h2>
-            <div id="menu-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
-        </section>
-
-        <!-- Sección de Contacto -->
-        <section id="contacto" class="tab-content hidden py-12">
-            <h2 class="text-2xl font-bold text-center mb-6">Contacto</h2>
-            <p class="text-center mb-2">📍 Av. Principal 123, Ciudad</p>
-            <p class="text-center mb-2">📞 Teléfono: (123) 456-7890</p>
-            <p class="text-center">🕑 Horario: Lun - Dom | 12:00 m - 10:00 pm</p>
-
-            <!-- QR opcional para acceso rápido -->
-            <div class="flex justify-center mt-6">
-                <img src="images/qr.png" alt="QR Cris Burger" class="h-40 w-40 shadow-md border rounded-lg">
-            </div>
-            <p class="text-center mt-2 text-sm text-gray-600">Escanea el código QR para visitar nuestra página</p>
-        </section>
+      <!-- Menú navegación -->
+      <nav class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto justify-center">
+        <a href="#inicio" class="btn tab-link active" data-tab="inicio">Inicio</a>
+        <a href="#menu" class="btn tab-link" data-tab="menu">Menú</a>
+        <a href="#contacto" class="btn tab-link" data-tab="contacto">Contacto</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Scripts -->
-    <script src="menu-data.js"></script>
-    <script src="menu.js"></script>
+  <!-- Contenido -->
+  <div class="container mx-auto py-8 px-4">
+    <!-- INICIO -->
+    <section id="inicio" class="tab-content py-12 md:py-16 bg-gray-50">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Texto -->
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl md:text-4xl font-bold mb-4">Bienvenidos a Cris Burger</h2>
+          <p class="text-base md:text-lg mb-6">
+            Las mejores hamburguesas, perros y salchipapas en un ambiente acogedor. 
+            Ven y prueba nuestros platos estrella preparados con ingredientes frescos y de calidad.
+          </p>
+          <a href="#menu" data-tab="menu" class="btn tab-link">👉 Ver nuestro Menú</a>
+        </div>
 
-    <!-- Script Carrusel -->
-    <script>
-        const images = document.querySelectorAll("#carousel img");
-        const dots = document.querySelectorAll(".dot");
-        let currentIndex = 0;
+        <!-- SLIDER -->
+        <div class="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg shadow-xl" id="rev-slider">
+          <div class="slide relative w-full h-64 md:h-96">
+            <img src="images/Hamburplatano.jpg" class="w-full h-full object-cover" alt="Hamburguesa Platano">
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white p-4">
+              <h2 class="text-2xl md:text-4xl font-bold animate-fade">Hamburguesa Plátano</h2>
+              <p class="mt-2 text-sm md:text-lg">Sabor único y jugoso 🍔</p>
+            </div>
+          </div>
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.add("hidden");
-                dots[i].classList.remove("bg-gray-800");
-                if (i === index) {
-                    img.classList.remove("hidden");
-                    dots[i].classList.add("bg-gray-800");
-                }
-            });
+          <div class="slide relative w-full h-64 md:h-96 hidden">
+            <img src="images/cascajo.jpg" class="w-full h-full object-cover" alt="Hamburguesa Pollo">
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white p-4">
+              <h2 class="text-2xl md:text-4xl font-bold animate-fade">Cris Pollo</h2>
+              <p class="mt-2 text-sm md:text-lg">Tierno y delicioso 🐔</p>
+            </div>
+          </div>
+
+          <div class="slide relative w-full h-64 md:h-96 hidden">
+            <img src="images/duos.jpg" class="w-full h-full object-cover" alt="Combo Dúo">
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white p-4">
+              <h2 class="text-2xl md:text-4xl font-bold animate-fade">Combo Dúo</h2>
+              <p class="mt-2 text-sm md:text-lg">Ideal para compartir ❤️</p>
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <button id="rev-prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-900/70 text-white p-2 rounded-full hover:bg-red-600">
+            &#10094;
+          </button>
+          <button id="rev-next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-900/70 text-white p-2 rounded-full hover:bg-red-600">
+            &#10095;
+          </button>
+
+          <!-- Dots -->
+          <div class="flex justify-center mt-3 space-x-2">
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"></span>
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"></span>
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section id="menu" class="tab-content hidden">
+      <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Nuestro Menú</h2>
+      <div id="menu-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="tab-content hidden py-12">
+      <h2 class="text-xl md:text-2xl font-bold text-center mb-6">Contacto</h2>
+      <p class="text-center mb-2 text-sm md:text-base">📍 Av. Principal 123, Ciudad</p>
+      <p class="text-center mb-2 text-sm md:text-base">📞 Teléfono: (123) 456-7890</p>
+      <p class="text-center text-sm md:text-base">🕑 Horario: Lun - Dom | 12:00 m - 10:00 pm</p>
+
+      <div class="flex justify-center mt-6">
+        <img src="images/qr.png" alt="QR Cris Burger" class="h-32 w-32 md:h-40 md:w-40 shadow-md border rounded-lg">
+      </div>
+      <p class="text-center mt-2 text-xs md:text-sm text-gray-600">Escanea el código QR para visitar nuestra página</p>
+    </section>
+  </div>
+
+  <!-- MODAL PRODUCTO -->
+  <div id="product-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-11/12 relative p-6">
+      <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+      <img id="modal-image" src="" alt="" class="w-full h-56 object-cover rounded-lg mb-4">
+      <h3 id="modal-title" class="text-2xl font-bold mb-2"></h3>
+      <p id="modal-description" class="text-gray-700 mb-3"></p>
+      <p id="modal-price" class="text-red-600 font-bold text-xl"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="menu-data.js"></script>
+  <script src="menu.js"></script>
+
+  <!-- Script Slider -->
+  <script>
+    const slides = document.querySelectorAll("#rev-slider .slide");
+    const dots = document.querySelectorAll("#rev-slider .dot");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.add("hidden");
+        dots[i].classList.remove("bg-red-600");
+        if (i === index) {
+          slide.classList.remove("hidden");
+          dots[i].classList.add("bg-red-600");
         }
+      });
+    }
 
-        document.getElementById("next").addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
-        });
+    document.getElementById("rev-next").addEventListener("click", () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
 
-        document.getElementById("prev").addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage(currentIndex);
-        });
+    document.getElementById("rev-prev").addEventListener("click", () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
 
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => {
-                currentIndex = i;
-                showImage(currentIndex);
-            });
-        });
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        current = i;
+        showSlide(current);
+      });
+    });
 
-        // Inicializa mostrando la primera
-        showImage(currentIndex);
-    </script>
+    // autoplay
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
+
+    showSlide(current);
+  </script>
 </body>
 </html>
+
